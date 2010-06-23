@@ -1,0 +1,18 @@
+<h1>Editing toy</h1> 
+	<% form_for @toy, :html => { :multipart => true } do |f| %>
+		<%= f.error_messages %>
+		<p> 
+			<%= f.label :title, "Kind of toy" %><br />
+			<%= f.text_field :title %>
+		</p>
+		<p>
+			<%= f.label :description, "Description of toy" %><br />
+			<%= f.text_area :description %> 
+		</p>
+		<p> <%= f.label :photo, "update photo" %><br />
+			<%= f.file_field :photo %> 
+		</p>
+		<p> <%= f.submit "Update" %>
+		</p> 
+		<% end %>
+<%= link_to 'Show', @toy %> | <%= link_to 'Back', toys_path %>

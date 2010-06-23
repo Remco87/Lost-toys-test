@@ -1,0 +1,18 @@
+
+<div id="adv_search">
+	<h2>Filter Results By:</h2>
+	<% form_remote_tag :url => toys_path, :method => "get" do %>
+		<div class="search_element">
+			<label>Zipcode:</label> <%= text_field_tag :zipcode, h(params[:zipcode]) %><br />
+		</div>
+		<div class="search_element">
+			<label>Category:</label>
+			<%= select_tag :status, options_for_select(Toy::VALID_STATUSES + [""], h(params[:status]) ) %>
+			</div> <div class="search_element">
+			<%= submit_tag 'Filter' %> </div>
+	<% end %> </div>
+<h1>Listing toys</h1>
+<div id="toy_listing">
+	<%= render :partial => @toys %>
+</div>
+<p class='closing'>Thank you for your support</p>

@@ -1,0 +1,7 @@
+<h2 class='listing_title'><%= link_to(toy.title, toy) %></h2>
+<p class='thumb'>
+	<%= link_to(image_tag(toy.photo.url(:thumb)), toy) %>
+</p>
+<p>
+	<%= simple_format(truncate(toy.description, :length => 95) + link_to("More info", toy))%>
+</p>

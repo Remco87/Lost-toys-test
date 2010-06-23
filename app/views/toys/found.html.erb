@@ -1,0 +1,25 @@
+<h1>Report a toy that was found</h1> 
+
+<% form_for @toy, :html => { :multipart => true } do |f| %>
+	<%= f.error_messages %> 
+	
+	<p>
+		<%= f.label :title, "What kind of toy did you find?" %>
+		<%= f.text_field :title %>
+		<%= f.label :description, "Describe the toy and where you found it, and provide information on how the owner can reclaim it" %>
+		<%= f.text_area :description %>
+		<%= f.hidden_field :status, :value => "FOUND" %> 
+	</p>
+	<p>
+		<%= f.label :zipcode, "Please provide the approximate zipcode for where you found the toy:"%>
+		<%= f.text_field :zipcode %>
+	<p>
+		<%= f.label :photo, "If possible, please upload a Photo of the toy." %>
+		<%= f.file_field :photo %>
+	</p>
+	<p> 
+		<%= f.submit "Create" %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', toys_path %>

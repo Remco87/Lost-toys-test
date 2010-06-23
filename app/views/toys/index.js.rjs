@@ -1,0 +1,2 @@
+page.replace_html "toy_listing", :partial => @toys
+page.visual_effect :highlight, "toy_listing"

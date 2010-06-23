@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head> 
+	<title>Lost Toys - Reuniting Children with Toys</title> 
+	<%= stylesheet_link_tag 'application' %>
+	<%= javascript_include_tag :defaults %>
+</head> 
+
+<body>
+<div id="container"> 
+		<div id="header">
+			<div id="nav_container"> 
+				<ul id="navigation">
+					<li><%= link_to image_tag('home.png'), root_path %></li>
+					<li><%= link_to image_tag('browse_toys.png'), toys_path %></li>
+					<li><%= link_to image_tag('lost_toy.png'), lost_path %></li>
+					<li><%= link_to image_tag('found_toy.png'), found_path %></li>
+				</ul>
+			</div>
+			<div id="logo"><%= image_tag "logo.png" %></div>
+		</div>
+		<div id="main">
+		<%= yield %>
+		</div>
+		<div id="footer">
+			<%= render :partial => 'users/user_bar' %> <h1>About Lost Toys</h1> <p>This is a where our footer text will go</p>
+		</div>
+	</body>
+</html>

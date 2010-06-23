@@ -1,0 +1,8 @@
+<h1><%= h @toy.status %> TOY</h1>
+<div class='photo'>
+	<%= image_tag @toy.photo.url(:medium) %>
+</div>
+<%= simple_format(h @toy.description) %>
+<p class='closing'>
+	<%= link_to 'Back', toys_path %>
+</p>

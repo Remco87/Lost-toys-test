@@ -1,0 +1,27 @@
+<h1>Report a lost toy</h1> 
+
+<% form_for @toy, :html => {:multipart => true} do |f| %>
+<%= f.error_messages %> 
+	<p>
+		<%= f.label :title, "What kind of toy did you lose?" %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :description, "Describe the toy making sure to note
+any distinguishing features and how someone could contact you if it was found." %>
+		<%= f.text_area :description %>
+		<%= f.hidden_field :status, :value => "LOST" %>
+	</p>
+	<p>
+		<%= f.label :zipcode, "Please provide an approximate zipcode for where you might have lost the toy:"%>
+		<%= f.text_field :zipcode %>
+	<p>
+		<%= f.label :photo, "Please upload a photo of the toy." %>
+		<%= f.file_field :photo %>
+	</p>
+	<p> 
+		<%= f.submit "Create" %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', toys_path %>

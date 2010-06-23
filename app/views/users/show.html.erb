@@ -1,0 +1,12 @@
+<h1>Welcome <%= @user.name %></h1>
+
+<p>Here are the toys that you have listed on the site.</p>
+
+<ul>
+	<% for toy in @toys %>
+	<li><%= link_to toy.title, toy %> --
+		<%= link_to 'Edit', edit_toy_path %>
+		<%= link_to 'Delete', toy, :method => :delete %>
+	</li>
+	<% end %>
+</ul>
